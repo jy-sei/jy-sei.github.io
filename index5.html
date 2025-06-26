@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>点击显示 PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入 pdfh5 样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfh5/css/pdfh5.css">
+  <style>
+    #pdf-container {
+      width: 100%;
+      height: 90vh;
+      display: none;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="showPDF()">点击查看 PDF</button>
+  <div id="pdf-container"></div>
+
+  <!-- 引入 pdfh5 脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfh5/js/pdfh5.min.js"></script>
+  <script>
+    let pdfViewer = null;
+
+    function showPDF() {
+      if (!pdfViewer) {
+        document.getElementById("pdf-container").style.display = "block";
+        pdfViewer = new Pdfh5('#pdf-container', {
+          pdfurl: 'fangwei.pdf' // 替换为你的 PDF 路径或完整 URL
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
