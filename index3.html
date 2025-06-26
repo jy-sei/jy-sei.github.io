@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfh5/css/pdfh5.css">
   <title>报告信息查询</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfh5/css/pdfh5.css">
   <style>
 /** {
       margin: 0;
@@ -159,17 +159,19 @@
     </div>
 </div>
 
+  <!-- PDF 展示容器 -->
+  <div id="pdf-container"></div>
+
+  <!-- 引入 pdfh5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/pdfh5/js/pdfh5.min.js"></script>
-  <script type="text/javascript" >
-    // function downloadPdf(){
-    //     var url ='./fangwei.pdf'
-    //     window.location.href = url;
-    // }
-    function downloadPdf(){
-        new Pdfh5('#pdf-container', {
-            pdfurl: './fangwei.pdf'  // 你的 PDF 文件路径
-        });
+  <script>
+    function showPDF() {
+      document.getElementById("pdf-container").style.display = "block";
+      new Pdfh5('#pdf-container', {
+        pdfurl: './fangwei.pdf' // 替换为你的 PDF 文件路径
+      });
     }
+  </script>
 </script>
 </body>
 </html>
