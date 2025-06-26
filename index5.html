@@ -1,40 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>点击显示 PDF</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 引入 pdfh5 样式 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfh5/css/pdfh5.css">
-  <style>
-    #pdf-container {
-      width: 100%;
-      height: 90vh;
-      display: none;
-      margin-top: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示 PDF</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/pdfh5/css/pdfh5.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #pdfContainer {
+            width: 80%; /* 可以根据需要调整宽度 */
+            height: 600px; /* 可以根据需要调整高度 */
+            border: 1px solid #ccc;
+            overflow: auto; /* 允许滚动 */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
 
-<!-- <button onclick="showPDF()">点击查看 PDF</button> -->
+    <button id="showPdfBtn">显示 PDF</button>
+    <div id="pdfContainer"></div>
 
-  <div id="pdf-container"></div>
+    <script src="https://unpkg.com/pdfh5/pdf.js"></script>
+    <script src="https://unpkg.com/pdfh5/pdf.worker.js"></script>
+    <script src="https://unpkg.com/pdfh5/pdfh5.js"></script>
 
-  <!-- 引入 pdfh5 脚本 -->
-  <script src="js/pdf.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
-
-  <script>
-        var pdfh5 = new Pdfh5(document.querySelector("pdf-container"), {
-        pdfurl: "./fangwei.pdf"
+    <script>
+        document.getElementById('showPdfBtn').addEventListener('click', function() {
+            // 检查 pdfContainer 是否已经有内容，避免重复加载
+            if (document.getElementById('pdfContainer').children.length === 0) {
+                // 实例化 pdfh5
+                new Pdfh5('.pdfContainer', {
+                    // 你的 PDF 文件路径
+                    // 注意：由于安全限制，直接从本地文件系统加载PDF可能遇到跨域问题。
+                    // 建议将PDF文件放置在Web服务器上。
+                    pdfurl: 'https://cdn.jsdelivr.net/gh/LibrePDF/PDF.js/web/compressed.tracemonkey-pldi-09.pdf'
+                });
+            } else {
+                console.log('PDF 已经加载。');
+            }
         });
-  </script>
-
+    </script>
 </body>
 </html>
