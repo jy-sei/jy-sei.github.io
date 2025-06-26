@@ -1,96 +1,18 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>报告信息查询</title>
-  <link rel="stylesheet" href="./css/pdfh5.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <style>
-/** {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>山东省特种设备检验研究院集团有限公司</title>
+    <link rel="stylesheet" type="text/css" href="/xreport/qrcode/css/bootstrap.min.css" />
+    <script src="/xreport/qrcode/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/pdfh5/js/jquery-2.1.1.min.js"></script>
 
-    body {
-      font-family: "Arial", sans-serif;
-      background: linear-gradient(to bottom, #007bff, #69b7ff);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .container {
-      background-color: rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-
-    .info-item {
-      margin: 10px 0;
-      font-size: 1rem;
-      word-break: break-word;
-    }
-
-    .highlight {
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    .button {
-      margin: 20px 0;
-    }
-
-    button {
-      background-color: white;
-      color: #007bff;
-      padding: 10px 20px;
-      border: 2px solid #007bff;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #007bff;
-      color: white;
-    }
-
-    .footer {
-      font-size: 0.9rem;
-      color: #f0f0f0;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.4rem;
-      }
-
-      .info-item {
-        font-size: 0.95rem;
-      }
-
-      button {
-        font-size: 0.95rem;
-        padding: 8px 16px;
-      }
-    }*/
-
+    <style> /*web background*/
 
         .row {
             display: table-cell;
@@ -120,14 +42,13 @@
             border:none;text-align: start;
         }
         .table-bordered>tbody>tr>th,.table>tbody>tr>th{width:25%;}
-    
-  </style>
+
+    </style>
 </head>
-<body style="padding: 0px;background-image: url('./fangwei-body.png');  background-repeat: no-repeat; background-size: 100% 100%; -moz-background-size:100% 100%;">
-<div class="banner" style="background-image: url('./fangwei-top.png');  background-repeat: no-repeat; background-size: 100% 100%; -moz-background-size:100% 100%;">
+<body style="padding: 0px;background-image: url('/xreport/qrcode/img/body.png');  background-repeat: no-repeat; background-size: 100% 100%; -moz-background-size:100% 100%;">
+<div class="banner" style="background-image: url('/xreport/qrcode/img/top.png');  background-repeat: no-repeat; background-size: 100% 100%; -moz-background-size:100% 100%;">
     <div>报告信息查询</div>
 </div>
-  
 <div class="container" style="margin: 20px 0px 0px 0px; padding: 0px 15px">
     <div class="container col-xs-12 col-sm-10 col-md-8 col-lg-6" style="padding: 0px 15px;color:#fff;">
         <table id="gasinfo" class="table table-bordered text-center col-xs-12 col-sm-12 col-md-12 col-lg-12"
@@ -160,28 +81,11 @@
     </div>
 </div>
 
-  <!-- PDF 展示容器
-  <div id="pdf-container"></div> -->
-
-  <!-- 引入 pdfh5 JS -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/pdfh5/js/pdfh5.min.js"></script> -->
-<!-- <script src="js/pdf.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/pdfh5.js" type="text/javascript" charset="utf-8"></script> -->
-  <!-- <script>
+<script type="text/javascript" >
     function downloadPdf(){
         var url ='/pdfh5/pdf.html?file='+encodeURIComponent('/x-report/qrReport?seListId=452444ed414798f35d211f1c7908a6ee&type=report')
         window.location.href = url;
     }
-  </script> -->
-
-
-  <script>
-    function downloadPdf(){
-        var url ='/pdfh5/pdf.html?file=/fangwei.pdf'
-        window.location.href = url;
-    }
-  </script>
 </script>
 </body>
 </html>
