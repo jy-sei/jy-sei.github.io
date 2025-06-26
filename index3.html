@@ -159,17 +159,21 @@
     </div>
 </div>
 
-  <!-- PDF 展示容器 -->
-  <div id="pdf-container"></div>
+  <!-- PDF 展示容器
+  <div id="pdf-container"></div> -->
 
   <!-- 引入 pdfh5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/pdfh5/js/pdfh5.min.js"></script>
-  <script>
-    function showPDF() {
-      document.getElementById("pdf-container").style.display = "block";
-      new Pdfh5('#pdf-container', {
-        pdfurl: './fangwei.pdf' // 替换为你的 PDF 文件路径
-      });
+  <!-- <script>
+    function downloadPdf(){
+        var url ='/pdfh5/pdf.html?file='+encodeURIComponent('/x-report/qrReport?seListId=452444ed414798f35d211f1c7908a6ee&type=report')
+        window.location.href = url;
+    }
+  </script> -->
+    <script>
+    function downloadPdf(){
+        var url ='/pdfh5/pdf.html?file=./fangwei.pdf'
+        window.location.href = url;
     }
   </script>
 </script>
