@@ -22,18 +22,21 @@
 <body>
 
   <button onclick="showPDF()">点击查看 PDF</button>
+
   <div id="pdf-container"></div>
 
   <!-- 引入 pdfh5 脚本 -->
-  <script src="https://cdn.jsdelivr.net/npm/pdfh5/js/pdfh5.min.js"></script>
+  <script src="js/pdf.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+
   <script>
     let pdfViewer = null;
 
     function showPDF() {
       if (!pdfViewer) {
-        document.getElementById("pdf-container").style.display = "block";
-        pdfViewer = new Pdfh5('#pdf-container', {
-          pdfurl: 'fangwei.pdf' // 替换为你的 PDF 路径或完整 URL
+        var pdfh5 = new Pdfh5(document.querySelector("pdf-container"), {
+        pdfurl: "./fangwei.pdf"
         });
       }
     }
