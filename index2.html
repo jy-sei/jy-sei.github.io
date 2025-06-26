@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>报告信息查询</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      background: linear-gradient(to bottom, #007bff, #69b7ff);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      margin: 10px 0;
+      font-size: 1rem;
+      word-break: break-word;
+    }
+
+    .highlight {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .button {
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: white;
+      color: #007bff;
+      padding: 10px 20px;
+      border: 2px solid #007bff;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .footer {
+      font-size: 0.9rem;
+      color: #f0f0f0;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      .info-item {
+        font-size: 0.95rem;
+      }
+
+      button {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>报告信息查询</h1>
+
+    <div class="info-item"><span class="highlight">报告编号</span>SY-QGN-202503050029001</div>
+    <div class="info-item"><span class="highlight">防伪码</span>452444ed414798f35d211f1c7908a6ee</div>
+    <div class="info-item"><span class="highlight">检验单位</span>山东省特种设备检验研究院集团有限公司</div>
+
+    <div class="info-item">
+      如需查询报告真伪，请点击防伪查询按钮，核对报告详情，核实报告真伪。
+    </div>
+
+    <div class="button">
+      <button>防伪查询</button>
+    </div>
+
+    <div class="footer">技术支持：山东乐习信息科技有限公司</div>
+  </div>
+</body>
+</html>
