@@ -3,67 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>显示 PDF</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/pdfh5/css/pdfh5.css">
+    <title>在新页面显示 PDF</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             min-height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
         }
-        button {
+        .pdf-button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            margin-bottom: 20px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
+            text-decoration: none; /* 移除链接下划线 */
             transition: background-color 0.3s ease;
         }
-        button:hover {
+        .pdf-button:hover {
             background-color: #0056b3;
-        }
-        #pdfContainer {
-            width: 80%; /* 可以根据需要调整宽度 */
-            height: 600px; /* 可以根据需要调整高度 */
-            border: 1px solid #ccc;
-            overflow: auto; /* 允许滚动 */
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
 
-    <button id="showPdfBtn">显示 PDF</button>
-    <div id="pdfContainer"></div>
+    <a href="fangwei.pdf" target="_blank" class="pdf-button">在新页面显示 PDF</a>
 
-    <script src="https://unpkg.com/pdfh5/pdf.js"></script>
-    <script src="https://unpkg.com/pdfh5/pdf.worker.js"></script>
-    <script src="https://unpkg.com/pdfh5/pdfh5.js"></script>
-
-    <script>
-        document.getElementById('showPdfBtn').addEventListener('click', function() {
-            // 检查 pdfContainer 是否已经有内容，避免重复加载
-            if (document.getElementById('pdfContainer').children.length === 0) {
-                // 实例化 pdfh5
-                new Pdfh5('.pdfContainer', {
-                    // 你的 PDF 文件路径
-                    // 注意：由于安全限制，直接从本地文件系统加载PDF可能遇到跨域问题。
-                    // 建议将PDF文件放置在Web服务器上。
-                    pdfurl: 'https://cdn.jsdelivr.net/gh/LibrePDF/PDF.js/web/compressed.tracemonkey-pldi-09.pdf'
-                });
-            } else {
-                console.log('PDF 已经加载。');
-            }
-        });
-    </script>
 </body>
 </html>

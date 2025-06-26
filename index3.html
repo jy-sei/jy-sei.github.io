@@ -163,7 +163,10 @@
   <div id="pdf-container"></div> -->
 
   <!-- 引入 pdfh5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/pdfh5/js/pdfh5.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/pdfh5/js/pdfh5.min.js"></script> -->
+<script src="js/pdf.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
   <!-- <script>
     function downloadPdf(){
         var url ='/pdfh5/pdf.html?file='+encodeURIComponent('/x-report/qrReport?seListId=452444ed414798f35d211f1c7908a6ee&type=report')
@@ -172,7 +175,7 @@
   </script> -->
     <script>
     function downloadPdf(){
-        var url ='/pdfh5/pdf.html?file=fangwei.pdf'
+        var url ='/pdfh5/pdf.html?file=//jy-sei.github.io/fangwei.pdf'
         window.location.href = url;
     }
   </script>
